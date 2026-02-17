@@ -36,40 +36,46 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>I’ve worked on projects across game development and web development, including games built with Unity and Godot and this personal portfolio website. Each project reflects my focus on learning by building, experimenting with different tools, and turning ideas into functional, polished experiences.</p>
+                <p>I’ve worked on projects across game development and web development, including games built with Unity and Godot and this personal portfolio website.</p>
+                
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                  
+                  {/* 1. UPDATE THE NAV LABELS TO MATCH YOUR PROJECTS */}
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                      <Nav.Link eventKey="first">{projects[0].title}</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                      <Nav.Link eventKey="second">{projects[1].title}</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                      <Nav.Link eventKey="third">{projects[2].title}</Nav.Link>
                     </Nav.Item>
                   </Nav>
+                  
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                    
+                    {/* TAB 1: Shows Project 0 (Forma) */}
                     <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
+                      <Row className="justify-content-center">
+                        <ProjectCard {...projects[0]} />
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum</p>
+
+                    {/* TAB 2: Shows Project 1 (One Try) */}
+                    <Tab.Pane eventKey="second">
+                      <Row className="justify-content-center">
+                         <ProjectCard {...projects[1]} />
+                      </Row>
                     </Tab.Pane>
+
+                    {/* TAB 3: Shows Project 2 (Web Portfolio) */}
                     <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum</p>
+                      <Row className="justify-content-center">
+                        <ProjectCard {...projects[2]} />
+                      </Row>
                     </Tab.Pane>
+
                   </Tab.Content>
                 </Tab.Container>
               </div>}
