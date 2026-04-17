@@ -14,16 +14,19 @@ export const Projects = () => {
       title: "Forma",
       description: "2D shooter made in Unity",
       imgUrl: projImg1,
+      projectUrl: "https://github.com/Gurnoor-Singh3000/Forma.git"
     },
     {
       title: "One Try",
       description: "Platformer game made in Godot",
       imgUrl: projImg2,
+      projectUrl: "https://github.com/Gurnoor-Singh3000/First-Shot.git"
     },
     {
-      title: "Web Portfolio",
-      description: "Website made using ReactJS",
+      title: "Connect 4",
+      description: "Connect 4 game made with unity with multiplayer and single player",
       imgUrl: projImg3,
+      projectUrl: "https://github.com/Gurnoor-Singh3000/Connect-4"
     }
   ];
 
@@ -83,7 +86,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={colorSharp2} alt=" "></img>
     </section>
   )
 }
